@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TODO List</title>
+		<link rel="stylesheet" href="style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Dosis&family=Open+Sans&family=Patrick+Hand&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="app-border">
+			<div class="header">
+				<h1 class="title">TODO List</h1>
+				<button class="settings-btn">
+					<img class="gear-img" src="gear.svg" alt="gear"/>
+				</button>
+			</div>
+			<div class="settings-background">
+				<div class="settings-modal">
+					<div class="input-row">
+						<h2 class="settings-title">Settings</h2>
+					</div>
+					<div class="input-row">
+						Background Color: <input type="color" class="background-color" value="#ffffff" />
+					</div>
+					<div class="input-row">
+						Panel Color: <input type="color" class="panel-color"/>
+					</div>
+					<button class="save-n-close-settings-btn">Save and Close</button>
+				</div>
+			</div>
+			<div class="modal">
+				<div class="input-row">
+					<input type="text" class="todo-text" />
+				</div>
+				<div class="input-row">
+					<button class="mark-complete-btn">Mark As Complete</button>
+					<button class="delete-btn">Delete</button>
+				</div>
+				<div class="input-row">
+					Highlight Color: <input type="color" class="highlight-color" value="#ffffff" />
+					Font Color: <input type="color" class="font-color"/>
+				</div>
+				<div class="input-row">
+					<select class="font-style">
+						<option value="Dosis" class="Dosis">Dosis</option>
+						<option value="&quot;Patrick Hand&quot;" class="Patrick Hand">Patrick Hand</option>
+						<option value="Comfortaa" class="Comfortaa">Comfortaa</option>
+						<option value="&quot;Open Sans&quot;" class="metal">Open Sans</option>
+					</select>
+				</div>
+				<div class="input-row">
+					<button class="save">Save</button>
+					<button class="cancel">Cancel</button>
+				</div>
+			</div>
+			<div class="item-list">
+				<!-- <div class="item" role="button">Need Milk</div>
+				<div class="item" role="button">New Game</div>
+				<div class="item" role="button">Cereal</div> -->
+			</div>
+			<button class="add-item-btn">+</button>
+		</div>
+		<script src="index.js"></script>
+	</body>
+</html>

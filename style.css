@@ -1,0 +1,170 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	padding: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	height: 100%;
+}
+
+.app-border {
+	height: 100%;
+	color: #FFF;
+	border-radius: 1em;
+	position: relative;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.app-border::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	margin: -10px;
+	border-radius: inherit;
+	background: linear-gradient(to right, red, orange);
+}
+
+.gear-img {
+	width: 100%;
+}
+
+button {
+	font-size: 16px;
+	border-radius: 50px;
+	padding: 5px;
+}
+
+.input-row {
+	margin-bottom: 10px;
+}
+
+.header {
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.title {
+	border: 2px solid black;
+	border-radius: 50px;
+	flex: 1 0 0;
+	margin: 0 10px 0 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 32px;
+}
+
+.settings-btn {
+	border: 2px solid black;
+	border-radius: 7%;
+	height: 50px;
+	width: 50px;
+	font-size: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.add-item-btn {
+	border: 2px solid black;
+	bottom: 5px;
+	font-size: 32px;
+	width: 90%;
+	height: 50px;
+	align-self: center;
+
+	/* position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0); */
+}
+
+.item-list {
+	overflow: auto;
+	flex: 2 0 0;
+}
+
+.item {
+	background: rgba(250, 98, 98, 0.5);
+	border-radius: 50px;
+	padding: 7px 20px;
+	margin-bottom: 10px;
+	pointer-events: all;
+	font-size: 25px;
+	overflow-wrap: break-word;
+}
+
+.sans-serif {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.serif {
+	font-family: serif;
+}
+
+.monospace {
+	font-family: monospace;
+}
+
+.cursive {
+	font-family: cursive;
+}
+
+.modal {
+	position: fixed;
+	top: 50%;
+	bottom: 0;
+	right: 0;
+	left: 100%;
+	background: rgb(250, 145, 145);
+	padding: 10px;
+	width: 100%;
+	transition: left 0.5s;
+	z-index: 9;
+}
+
+.settings-background {
+	background: rgba(97, 72, 72, 0.8);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
+}
+
+.settings-modal {
+	background: rgb(250, 145, 145);
+	width: 70%;
+	height: 70%;
+	padding: 10px;
+	border-radius: 25px;
+}
+
+.settings-title {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.todo-text {
+	width: 100%;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+
+
