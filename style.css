@@ -123,7 +123,7 @@ button {
 
 .modal {
 	position: fixed;
-	top: 50%;
+	top: 60%;
 	bottom: 0;
 	right: 0;
 	left: 100%;
@@ -132,6 +132,23 @@ button {
 	width: 100%;
 	transition: left 0.5s;
 	z-index: 9;
+	display: flex;
+	flex-direction: column;
+	border-radius: 25px;
+}
+
+.input-row-top {
+	flex: 2 0 0;
+}
+
+.input-row-bottom {
+	display: flex;
+	flex-direction: column;
+	margin: 10px;
+}
+
+.save {
+	margin-bottom: 5px;
 }
 
 .settings-background {
@@ -163,7 +180,7 @@ button {
 .todo-text {
 	width: 100%;
 	font-size: 20px;
-	margin-bottom: 10px;
+	margin: 10px 0;
 }
 
 

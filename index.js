@@ -5,6 +5,8 @@ const settingsBackground = document.querySelector(".settings-background");
 const saveNCloseSettingsBtn = document.querySelector(".save-n-close-settings-btn");
 const backgroundColor = document.querySelector(".background-color");
 const panelColor = document.querySelector(".panel-color");
+const borderColor1 = document.querySelector(".border-color1");
+const borderColor2 = document.querySelector(".border-color2");
 const settingsModal = document.querySelector(".settings-modal");
 const addModal = document.querySelector(".modal");
 const saveBtn = document.querySelector(".save");
@@ -16,10 +18,13 @@ const fontColor = document.querySelector(".font-color");
 const fontStyle = document.querySelector(".font-style");
 const completeBtn = document.querySelector(".mark-complete-btn");
 const deleteBtn = document.querySelector(".delete-btn");
+const appBorderStyleElem = document.head.appendChild(document.createElement("style"));
 
 const defaultSettings = {
 	backgroundColor: "#2e51ff",
-	panelColor: "#5fb4b3"
+	panelColor: "#5fb4b3",
+	borderColor1: "#ff0000",
+	borderColor2: "#f28e29",
 };
 
 const defaultSettingsString = JSON.stringify(defaultSettings);
@@ -34,7 +39,9 @@ settingsBtn.addEventListener("click", () => {
 const saveSettingsToLocalStorage = () => {
 	const settingsObj = {
 		backgroundColor: backgroundColor.value,
-		panelColor: panelColor.value
+		panelColor: panelColor.value,
+		borderColor1: borderColor1.value,
+		borderColor2: borderColor2.value
 	};
 	localStorage.settings = JSON.stringify(settingsObj);
 };
@@ -48,6 +55,13 @@ const loadSettingsFromLocalStorage = () => {
 	settingsModal.style.background = settings.panelColor;
 	backgroundColor.value = settings.backgroundColor;
 	panelColor.value = settings.panelColor;
+	borderColor1.value = settings.borderColor1;
+	borderColor2.value = settings.borderColor2;
+	appBorderStyleElem.textContent = `
+		.app-border::before {
+			background: linear-gradient(to right, ${borderColor1.value}, ${borderColor2.value});
+		}
+	`;
 };
 loadSettingsFromLocalStorage();
 
@@ -57,7 +71,11 @@ saveNCloseSettingsBtn.addEventListener("click", () => {
 	appBorderEle.style.background = backgroundColor.value;
 	addModal.style.background = panelColor.value;
 	settingsModal.style.background = panelColor.value;
-
+	appBorderStyleElem.textContent = `
+		.app-border::before {
+			background: linear-gradient(to right, ${borderColor1.value}, ${borderColor2.value});
+		}
+	`;
 	saveSettingsToLocalStorage();
 });
 
