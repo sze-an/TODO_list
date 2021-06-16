@@ -16,6 +16,14 @@ const fontColor = document.querySelector(".font-color");
 const fontStyle = document.querySelector(".font-style");
 const completeBtn = document.querySelector(".mark-complete-btn");
 const deleteBtn = document.querySelector(".delete-btn");
+
+const defaultSettings = {
+	backgroundColor: "#2e51ff",
+	panelColor: "#5fb4b3"
+};
+
+const defaultSettingsString = JSON.stringify(defaultSettings);
+
 let addBtnClicked = false;
 let editingSelectedItem;
 
@@ -32,7 +40,7 @@ const saveSettingsToLocalStorage = () => {
 };
 
 const loadSettingsFromLocalStorage = () => {
-	const settings = JSON.parse(localStorage.settings ?? "{}");
+	const settings = JSON.parse(localStorage.settings ?? defaultSettingsString);
 	// console.log(settings);
 	document.body.style.background = settings.backgroundColor;
 	appBorderEle.style.background = settings.backgroundColor;
